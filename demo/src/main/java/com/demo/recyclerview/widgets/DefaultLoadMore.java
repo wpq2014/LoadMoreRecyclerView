@@ -1,4 +1,4 @@
-package com.demo.recyclerview;
+package com.demo.recyclerview.widgets;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ab.lib.widget.recyclerview.LoadMoreLayout;
+import com.demo.recyclerview.R;
 import com.demo.recyclerview.utils.ScreenUtil;
 
 /**

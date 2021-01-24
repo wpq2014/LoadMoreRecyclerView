@@ -5,8 +5,16 @@
     android:layout_height="match_parent">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:srlEnableOverScrollBounce="false"
+        app:srlDragRate="0.5">
+
+<!--        <com.demo.recyclerview.widgets.DefaultRefreshHeader-->
+<!--            android:id="@+id/refreshHeader"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
 
         <com.ab.lib.widget.recyclerview.LoadMoreRecyclerView
             android:id="@+id/recyclerview"

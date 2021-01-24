@@ -2,6 +2,7 @@ package com.demo.recyclerview.loadmore;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,11 @@ import com.demo.recyclerview.loadmore.bean.TestListBean;
 import com.demo.recyclerview.loadmore.bean.TestTabBean;
 import com.demo.recyclerview.utils.MainHandler;
 import com.demo.recyclerview.utils.ScreenUtil;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.RefreshState;
+import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +34,7 @@ import java.util.Random;
  */
 public class StaggeredGridActivity extends AppCompatActivity {
 
+    private SmartRefreshLayout refreshLayout;
     private LoadMoreRecyclerView recyclerview;
     private StaggeredGridAdapter mAdapter;
 
@@ -41,10 +48,34 @@ public class StaggeredGridActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        refreshLayout = findViewById(R.id.refreshLayout);
         recyclerview = findViewById(R.id.recyclerview);
     }
 
     private void initListeners() {
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                MainHandler.getInstance().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishRefresh();
+                    }
+                }, 800);
+            }
+        });
+//        refreshHeader?.setOnHeaderRefreshListener(object : DKRefreshHeader.OnHeaderRefreshListener() {
+//            override fun onStateChanged(refreshLayout: RefreshLayout, oldState: RefreshState, newState:
+//            RefreshState) {
+//                super.onStateChanged(refreshLayout, oldState, newState)
+////                if (newState == RefreshState.None) {
+////                    cell_custom?.show()
+////                } else {
+////                    cell_custom?.hide()
+////                }
+//            }
+//        })
+
         AStaggeredGridLayoutManager layoutManager = new AStaggeredGridLayoutManager(2, RecyclerView.VERTICAL);
         recyclerview.setLayoutManager(layoutManager);
         AStaggeredGridSpaceDecoration itemDecoration = new AStaggeredGridSpaceDecoration(layoutManager.getOrientation(), ScreenUtil.dp2px(10));
@@ -99,7 +130,6 @@ public class StaggeredGridActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
                 MainHandler.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
