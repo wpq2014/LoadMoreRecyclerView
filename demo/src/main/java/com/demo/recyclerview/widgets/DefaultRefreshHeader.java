@@ -33,6 +33,8 @@ public class DefaultRefreshHeader extends LinearLayout implements RefreshHeader 
     private ImageView mIvHeader = null;
     private OnHeaderRefreshListener mOnHeaderRefreshListener = null;
 
+    protected RefreshKernel mRefreshKernel;
+
     public DefaultRefreshHeader(Context context) {
         super(context);
         init();
@@ -89,6 +91,7 @@ public class DefaultRefreshHeader extends LinearLayout implements RefreshHeader 
     @Override
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int maxDragHeight) {
         Log.e(TAG, "onInitialized");
+        mRefreshKernel = kernel;
     }
 
     @Override
