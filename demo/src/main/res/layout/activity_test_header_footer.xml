@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_addHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="addHeader"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_removeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="removeHeader"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addHeader" />
+
+    <Button
+        android:id="@+id/btn_addFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="addFooter"
+        app:layout_constraintTop_toBottomOf="@+id/btn_removeHeader" />
+
+    <Button
+        android:id="@+id/btn_removeFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="removeFooter"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addFooter" />
+
+    <Button
+        android:id="@+id/btn_addItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="addItem"
+        app:layout_constraintTop_toBottomOf="@+id/btn_removeFooter" />
+
+    <Button
+        android:id="@+id/btn_addItemRanged"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="addItemRanged"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addItem" />
+
+    <Button
+        android:id="@+id/btn_removeItemRanged"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="removeItemRanged"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addItemRanged" />
+
+    <com.ab.lib.widget.recyclerview.LoadMoreRecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_removeItemRanged"
+        android:scrollbars="none"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

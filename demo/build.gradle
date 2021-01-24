@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.demo.recyclerview"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':library')
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
+    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.legacyVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.cardview:cardview:$rootProject.cardviewVersion"
+    // Google的流式布局 https://github.com/google/flexbox-layout
+    implementation "com.google.android:flexbox:$rootProject.flexboxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlin_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    //lifecycle 引入ViewModel类
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycle"
+
+    // 下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    api "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.smartRefreshLayoutVersion"
+}

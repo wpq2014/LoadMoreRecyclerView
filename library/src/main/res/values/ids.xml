@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- DropDownMenu -->
+    <item name="dropDownMenuTab" type="id"/>
+
+    <!-- DKExpandTextLayout -->
+    <item name="dk_expand_text" type="id"/>
+    <item name="dk_expand_toggle" type="id"/>
+
+    <!-- StatusBarUtil -->
+    <item type="id" name="statusbarutil_fake_status_bar_view" />
+    <item type="id" name="statusbarutil_translucent_view" />
+
+</resources>
