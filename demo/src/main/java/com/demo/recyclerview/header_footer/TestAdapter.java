@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.ab.lib.widget.recyclerview.ABaseAdapter;
+import com.ab.lib.widget.recyclerview.adapter.ABaseAdapter;
 import com.ab.lib.widget.recyclerview.ABaseViewHolder;
 
 import java.util.List;

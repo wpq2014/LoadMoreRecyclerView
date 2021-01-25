@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ab.lib.widget.recyclerview.ABaseTypeAdapter;
+import com.ab.lib.widget.recyclerview.adapter.ABaseTypeAdapter;
 import com.ab.lib.widget.recyclerview.ABaseViewHolder;
 import com.demo.recyclerview.loadmore.TestItemType;
 import com.demo.recyclerview.loadmore.bean.BaseTestTypeBean;

@@ -1,4 +1,6 @@
-package com.ab.lib.widget.recyclerview;
+package com.ab.lib.widget.recyclerview.adapter;
+
+import com.ab.lib.widget.recyclerview.AdapterItemType;
 
 import java.util.List;
 

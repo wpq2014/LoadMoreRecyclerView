@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ab.lib.widget.recyclerview.ABaseAdapter;
+import com.ab.lib.widget.recyclerview.adapter.ABaseAdapter;
 import com.ab.lib.widget.recyclerview.ABaseViewHolder;
 import com.ab.lib.widget.recyclerview.LoadMoreRecyclerView;
 import com.ab.lib.widget.recyclerview.layoutmanger.ALinearLayoutManager;

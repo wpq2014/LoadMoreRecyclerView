@@ -1,7 +1,9 @@
-package com.ab.lib.widget.recyclerview;
+package com.ab.lib.widget.recyclerview.adapter;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ab.lib.widget.recyclerview.ABaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

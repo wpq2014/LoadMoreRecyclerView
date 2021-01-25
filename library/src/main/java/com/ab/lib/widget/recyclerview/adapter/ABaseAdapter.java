@@ -1,9 +1,11 @@
-package com.ab.lib.widget.recyclerview;
+package com.ab.lib.widget.recyclerview.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+
+import com.ab.lib.widget.recyclerview.ABaseViewHolder;
 
 import java.util.List;
 
