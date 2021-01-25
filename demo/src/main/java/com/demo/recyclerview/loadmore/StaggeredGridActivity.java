@@ -60,6 +60,7 @@ public class StaggeredGridActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         refreshLayout.finishRefresh();
+                        doBusiness();
                     }
                 }, 800);
             }
@@ -94,6 +95,7 @@ public class StaggeredGridActivity extends AppCompatActivity {
     private void doBusiness() {
         mAdapter.setData(initData());
         mAdapter.notifyDataSetChanged();
+        recyclerview.loadMoreComplete();
     }
 
     private List<BaseTestTypeBean> initData() {

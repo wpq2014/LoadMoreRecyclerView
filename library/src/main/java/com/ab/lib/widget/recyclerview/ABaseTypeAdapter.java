@@ -4,54 +4,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
-
 /**
- * 多类型item
- *
  * @author wupuquan
- * @version 1.0
- * @since 2018/8/3 16:18
+ * @since 2021/1/25
  */
-public abstract class ABaseTypeAdapter<T> extends RecyclerView.Adapter<ABaseViewHolder> {
+public abstract class ABaseTypeAdapter<T> extends AInnerBaseAdapter<T>{
 
-    private final List<T> mList;
+    private static final String TAG = ABaseTypeAdapter.class.getSimpleName();
 
     public ABaseTypeAdapter(List<T> list) {
-        if (list == null) {
-            mList = new ArrayList<>();
-        } else {
-            mList = list;
-        }
-    }
-
-    public List<T> getData() {
-        return mList;
-    }
-
-    public void setData(List<T> list) {
-        if (list == null) {
-            return;
-        }
-        mList.clear();
-        mList.addAll(list);
-    }
-
-    public void addData(T data) {
-        mList.add(data);
-    }
-
-    public void addData(List<T> list) {
-        mList.addAll(list);
-    }
-
-    public void clearData() {
-        mList.clear();
+        super(list);
     }
 
     @NonNull
@@ -59,7 +25,7 @@ public abstract class ABaseTypeAdapter<T> extends RecyclerView.Adapter<ABaseView
     public ABaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ABaseViewHolder viewHolder = onCreate(parent, viewType);
         if (viewHolder == null) {
-            Log.e(this.getClass().getSimpleName(), "onCreateViewHolder return null !");
+            Log.e(TAG, "onCreateViewHolder return null !");
             viewHolder = new ABaseViewHolder(new View(parent.getContext()));
         }
         return viewHolder;
@@ -84,24 +50,11 @@ public abstract class ABaseTypeAdapter<T> extends RecyclerView.Adapter<ABaseView
     }
 
     @Override
-    public int getItemCount() {
-        return mList == null ? 0 : mList.size();
-    }
-
-    @Override
     public int getItemViewType(int position) {
         if (position >= 0 && position < getItemCount()) {
             return getViewType(position);
         }
         return super.getItemViewType(position);
-    }
-
-    @Nullable
-    protected T getItem(int position) {
-        if (position >= 0 && position < getItemCount()) {
-            return mList.get(position);
-        }
-        return null;
     }
 
     protected abstract ABaseViewHolder onCreate(@NonNull ViewGroup parent, int viewType);
