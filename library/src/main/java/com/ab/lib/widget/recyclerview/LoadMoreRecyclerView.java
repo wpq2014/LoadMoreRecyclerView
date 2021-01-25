@@ -20,8 +20,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 /**
  * refs: https://github.com/XRecyclerView/XRecyclerView
  * <p>
- * 只封装加载更多，下拉刷新可配合 {@link SwipeRefreshLayout}
- * 和 https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
+ * 只封装加载更多，下拉刷新可配合：https://github.com/scwang90/SmartRefreshLayout
  * <p>
  *
  * @author wpq
